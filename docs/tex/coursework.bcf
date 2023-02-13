@@ -3524,6 +3524,13 @@
     <bcf:datasource type="file" datatype="bibtex">biblio.bib</bcf:datasource>
   </bcf:bibdata>
   <bcf:section number="0">
+    <bcf:citekey order="1">love</bcf:citekey>
+    <bcf:citekey order="2">oracle</bcf:citekey>
+    <bcf:citekey order="3">tables</bcf:citekey>
+    <bcf:citekey order="4">c</bcf:citekey>
+    <bcf:citekey order="5">vscode</bcf:citekey>
+    <bcf:citekey order="6">ubuntu</bcf:citekey>
+    <bcf:citekey order="7">kernel</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="none">
