@@ -1,0 +1,1 @@
+cmd_/home/regina/bmstu/sem7/os-course/src/pagetracer.ko := ld -r  -m elf_x86_64 -z noexecstack   --build-id=sha1  -T scripts/module.lds -o /home/regina/bmstu/sem7/os-course/src/pagetracer.ko /home/regina/bmstu/sem7/os-course/src/pagetracer.o /home/regina/bmstu/sem7/os-course/src/pagetracer.mod.o;  true
