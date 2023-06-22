@@ -1,6 +1,6 @@
 \chapter{Конструкторский раздел}
 
-\section{Диаграммы состояний IDEF0}
+\section{Последовательность преобразований}
 
 На рисунке \ref{img:idef0} приведена диаграмма состояний IDEF0 нулевого уровня, а на рисунке \ref{img:idef1} --- диаграмма состояний IDEF0 первого уровня.
 
@@ -22,43 +22,54 @@
 	\label{img:idef1}
 \end{figure}
 
-\section{Схемы алгоритмов}
+\section{Алгоритм сканирования виртуальных страниц}
 
-\subsection{Алгоритм прохода по виртуальным адресам}
-
-На рисунке \ref{img:trace_pages} представлена схема алгоритма прохода по виртуальным адресам.
+На рисунке \ref{img:trace_pages} представлена схема алгоритма сканирования виртуальных страниц.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.7]{inc/img/trace_pages.pdf}
+		\includegraphics[scale=0.75]{inc/img/trace_pages.pdf}
 	\end{center}
 	\captionsetup{justification=centering}
-	\caption{Проход по виртуальным адресам}
+	\caption{Алгоритм сканирования виртуальных страниц}
 	\label{img:trace_pages}
 \end{figure}
 
-\subsection{Алгоритм получения физической страницы}
+\section{Алгоритм обращения к дескриптору физической страницы}
 
-На рисунке \ref{img:get-page} показана схема алгоритма получения физической страницы.
+На рисунке \ref{img:get-page} показана схема алгоритма обращения к дескриптору физической страницы.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.55]{inc/img/get_page.pdf}
+		\includegraphics[scale=0.65]{inc/img/get_page.pdf}
 	\end{center}
 	\captionsetup{justification=centering}
-	\caption{Получение физической страницы}
+	\caption{Алгоритм обращения к дескриптору физической страницы}
 	\label{img:get-page}
 \end{figure}
 
-\section{Структура загружаемого модуля ядра}
+\section{Алгоритм получения информации о состоянии физической страницы}
 
-На рисунке \ref{img:structure} приведена структура загружаемого модуля ядра.
+На рисунке \ref{img:log-page} приведена схема алгоритма получения информации о состоянии физической страницы.
 
 \begin{figure}[H]
 	\begin{center}
-		\includegraphics[scale=0.75]{inc/img/structure.pdf}
+		\includegraphics[scale=0.8]{inc/img/log_page.pdf}
 	\end{center}
 	\captionsetup{justification=centering}
-	\caption{Получение физической страницы}
+	\caption{Алгоритм получения информации о состоянии физической страницы}
+	\label{img:log-page}
+\end{figure}
+
+\section{Структура программного обеспечения}
+
+На рисунке \ref{img:structure} представлена структура программного обеспечения.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[scale=0.8]{inc/img/structure.pdf}
+	\end{center}
+	\captionsetup{justification=centering}
+	\caption{Структура программного обеспечения}
 	\label{img:structure}
 \end{figure}

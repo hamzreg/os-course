@@ -37,7 +37,7 @@ static int walk_page_table(struct mm_struct *mm, unsigned long vaddr)
     page = pte_page(pte);
 
     if (page)
-        lop_page(page);
+        log_page(page);
 
     pte_unmap(ptep);
     return 0;

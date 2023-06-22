@@ -7,8 +7,8 @@ static int __init md_init(void)
         struct task_struct *task = pid_task(find_vpid(process_id), PIDTYPE_PID);
         printk(KERN_INFO "pagetracer: %d: process name is %s.\n",
                process_id, task->comm);
-            
-        trace_pages(task);
+
+        scan_virtual_pages(task);
     }
     else
     {
@@ -17,9 +17,6 @@ static int __init md_init(void)
 
     return 0;
 }
-
-
-
 
 static void __exit md_exit(void)
 {

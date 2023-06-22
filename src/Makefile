@@ -10,15 +10,21 @@ default:
 
 clean:
 	@rm -f *.o .*.cmd .*.flags *.mod.c *.order
-	@rm -f .*.*.cmd *~ *.*~ TODO.*
+	@rm -f .*.*.cmd *~ *.*~
 	@rm -fR .tmp*
 	@rm -rf .tmp_versions
 
-disclean: clean
+distclean: clean
 	@rm -f *.ko *.symvers *.mod
 
 load:
-	sudo insmod $(TARGET).ko
+	sudo insmod $(TARGET).ko process_id=$(pid)
+
+info:
+	sudo lsmod | grep $(TARGET)
+
+log:
+	sudo dmesg | grep "$(TARGET): $(pid):"
 
 unload:
 	sudo rmmod $(TARGET).ko

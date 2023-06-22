@@ -1,4 +1,4 @@
-static void trace_pages(struct task_struct *task)
+static void scan_virtual_pages(struct task_struct *task)
 {
     struct mm_struct *mm = task->mm;
     struct vm_area_struct *vma = mm->mmap;
@@ -13,12 +13,11 @@ static void trace_pages(struct task_struct *task)
             printk(KERN_INFO "pagetracer: %d: page number is %d.\n",
                    process_id, page_number++);
 
-            if (get_page(mm, vaddr) != 0)
+            if (walk_page_table(mm, vaddr) != 0)
             {
                 printk(KERN_INFO "pagetracer: %d: page not mapped in page table.\n",
                        process_id); 
             }
-
         }
     }
 }

@@ -1,4 +1,4 @@
-static void lop_page(struct page *page)
+static void log_page(struct page *page)
 {
     int page_type = (int)page->page_type;
     printk(KERN_INFO "pagetracer: %d: page type is %d.\n",

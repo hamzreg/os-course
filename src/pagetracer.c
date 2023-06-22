@@ -20,7 +20,7 @@ static int process_id;
 module_param(process_id, int, 0);
 
 
-static void lop_page(struct page *page)
+static void log_page(struct page *page)
 {
     int page_type = (int)page->page_type;
     printk(KERN_INFO "pagetracer: %d: page type is %d.\n",
@@ -74,13 +74,13 @@ static int walk_page_table(struct mm_struct *mm, unsigned long vaddr)
     page = pte_page(pte);
 
     if (page)
-        lop_page(page);
+        log_page(page);
 
     pte_unmap(ptep);
     return 0;
 }
 
-static void trace_pages(struct task_struct *task)
+static void scan_virtual_pages(struct task_struct *task)
 {
     struct mm_struct *mm = task->mm;
     struct vm_area_struct *vma = mm->mmap;
@@ -100,7 +100,6 @@ static void trace_pages(struct task_struct *task)
                 printk(KERN_INFO "pagetracer: %d: page not mapped in page table.\n",
                        process_id); 
             }
-
         }
     }
 }
@@ -114,8 +113,8 @@ static int __init md_init(void)
         struct task_struct *task = pid_task(find_vpid(process_id), PIDTYPE_PID);
         printk(KERN_INFO "pagetracer: %d: process name is %s.\n",
                process_id, task->comm);
-            
-        trace_pages(task);
+
+        scan_virtual_pages(task);
     }
     else
     {
